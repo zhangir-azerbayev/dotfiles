@@ -3,7 +3,7 @@
 
 All the information required to get i3, vimLaTeX and my workflow (Notion, MineTime) working on a clean Ubuntu install. 
 
-##i3
+## i3
 Ubuntu package dependencies:
 -  i3
 -  minetime
@@ -35,7 +35,7 @@ Instructions for setup:
 
 2. Go to lxappearance, change font to SFNS Display, gtk theme to arc-darker, icons to papirus
 
-##Vimtex
+## Vimtex
 
 Package dependencies:
 - vim
