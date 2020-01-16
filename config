@@ -211,3 +211,6 @@ exec minetime
 
 #transparent windows
 exec_always compton --config ~/.config/compton/compton.conf
+
+#screenshots
+bindsym --release Shift+Print exec "scrot ~/Pictures/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"

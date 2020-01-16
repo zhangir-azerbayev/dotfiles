@@ -13,6 +13,8 @@ Ubuntu package dependencies:
 -  vim
 -  i3blocks
 - lxappearance
+- scrot
+- xclip
 
 Github repo dependencies:
 - YosemiteSanFranciscoFont
