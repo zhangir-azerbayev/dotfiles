@@ -16,7 +16,7 @@ alias eleuther="rename eleuther; ssh -i ~/.ssh/id_ed25519 zhangir.azerbayev@eleu
 # nvim 
 alias vim="nvim"
 alias vi="nvim"
-alias oldvim="vim"
+alias oldvim="/bin/vim"
 
 # tmux
 alias rename="tmux rename-window"

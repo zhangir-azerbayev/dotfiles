@@ -116,9 +116,7 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
-Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -135,10 +133,6 @@ let g:UltiSnipsEditSplit = "tabdo"
 let g:pear_tree_repeatable_expand=0
 let g:pear_tree_ft_disabled = ["tex"]
 call plug#end()
-" configures toggleterm
-lua require("toggleterm").setup()
-nnoremap <C-c> :ToggleTerm<CR>
-tnoremap <Esc> <C-\><C-n>
 
 
 "theming 
