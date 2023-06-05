@@ -36,3 +36,8 @@ set vim_config_path $HOME/.vimrc
 rm $vim_config_path; or true
 ln -s $repo_dir/.vimrc $vim_config_path
 
+# tex snippets
+mkdir -p $HOME/.vim/UltiSnips
+set snippet_config_path $HOME/.vim/UltiSnips/tex.snippets
+rm $snippet_config_path; or true 
+ln -s $repo_dir/tex.snippets $snippet_config_path

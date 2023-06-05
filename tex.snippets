@@ -1,0 +1,242 @@
+# environments
+
+snippet article "article"
+\documentclass{article}
+\input{preamble}
+
+\title{$1}
+\author{$2}
+\date{$3}
+
+\begin{document}
+	\maketitle
+
+	$0
+\end{document}
+endsnippet
+
+snippet beg "begin end" 
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet eq "equation"
+\begin{equation*}
+	$1
+\end{equation*}
+$0
+endsnippet
+
+snippet eqn "numbered equation"
+\begin{equation}
+	$1
+\end{equation}
+$0
+endsnippet
+
+snippet eqs "equations"
+\begin{align*}
+	$1
+\end{align*}
+endsnippet
+
+snippet eqns "numbered equations"
+\begin{align}
+	$1
+\end{align}
+endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet thm "theorem"
+\begin{thm}
+	$1
+\end{thm}
+$0
+endsnippet
+
+snippet prop "proposition"
+\begin{prop}
+	$1
+\end{prop}
+$0
+endsnippet
+
+snippet lem "lemma"
+\begin{lem}
+	$1
+\end{lem}
+$0
+endsnippet
+
+snippet def "definition"
+\begin{defn}
+	$1
+\end{defn}
+$0
+endsnippet
+
+snippet ex "example"
+\begin{example}
+	$1
+\end{example}
+$0
+endsnippet
+
+snippet pf "proof"
+\begin{proof}
+	$1
+\end{proof}
+$0
+endsnippet
+
+snippet item "item"
+\begin{itemize}
+	\item $1
+\end{itemize}
+$0
+endsnippet 
+
+snippet enum "enum"
+\begin{enumerate}
+	\item $1
+\end{enumerate}
+$0
+endsnippet 
+
+snippet frame "frame" i
+\begin{frame}
+\frametitle{$1}
+$2
+\end{frame}
+$0
+endsnippet
+
+snippet prob "problem" 
+\begin{question}{$1}
+	$2
+\end{question}
+$0
+endsnippet
+
+snippet part "part" 
+\begin{part}
+	$1
+\end{part}
+endsnippet
+
+# text formatting 
+
+snippet prc "textproc"
+\textproc{$1}$0
+endsnippet
+
+snippet bf "boldface"
+{\bf $1}$0
+endsnippet
+
+# math mode diacriticals
+
+snippet ex "exponent" i
+^{$1}$0
+endsnippet
+
+snippet sb "subscript" i
+_{$1}$0
+endsnippet
+
+snippet hat "hat" i
+\hat{$1}$0
+endsnippet 
+
+snippet bar "bar" i
+\overline{$1}$0
+endsnippet
+
+snippet ve "vector" i
+\vec{$1}$0
+endsnippet
+
+snippet pr "prime" i
+^\prime $0
+endsnippet
+
+# math mode commands
+
+snippet // "frac" i
+\frac{$1}{$2}$0
+endsnippet
+
+snippet ( "paren" i
+\left($1\right)$0
+endsnippet
+
+snippet [ "bracket" i
+\left[$1\right]$0
+endsnippet
+
+snippet norm "norm" i
+\left\lVert $0\right\rVert $0
+endsnippet
+
+snippet cal "mathcal" i
+\mathcal{$1}$0
+endsnippet
+
+snippet frak "mathfrak" i
+\mathfrak{$1}$0
+endsnippet
+
+snippet eps "epsilon" i
+\varepsilon
+endsnippet
+
+snippet dv "derivative" i
+\dv[$1]{$2}{$3}$0
+endsnippet
+
+snippet pdv "partial derivative" i
+\pdv[$1]{$2}{$3}$0
+endsnippet
+
+snippet sum "sum" i
+\sum_{$1}^{$2}$0 
+endsnippet
+
+snippet int "integral" i
+\int_{$1}^{$2}$3 \dd $4
+endsnippet
+
+snippet sqrt "square root" i
+\sqrt{$1}$0
+endsnippet
+
+# Physics
+
+snippet gauss "gauss's law constant"
+\frac{$1}{4\pi\varepsilon_0$2}$0
+endsnippet
+
+snippet div "div" i 
+\nabla\cdot $0
+endsnippet
+
+snippet grad "grad" i 
+\nabla $0
+endsnippet
+
+snippet curl "curl" i 
+\nabla\times $0 
+endsnippet
+
+snippet dal "d'alambertian" i 
+\Box^2 $0
+endsnippet
