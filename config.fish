@@ -18,6 +18,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="/bin/vim"
 
+# exa
+alias ls="exa"
+
 # tmux
 alias rename="tmux rename-window"
 
