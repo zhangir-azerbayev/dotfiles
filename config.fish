@@ -12,6 +12,7 @@ alias tangra="rename tangra; ssh zaa7@tangra.cs.yale.edu"
 alias vesna="rename vesna; ssh -J zaa7@tangra.cs.yale.edu zaa7@vesna.cs.yale.internal"
 alias stabilitycpu="rename stabilitycpu; ssh -i ~/.ssh/id_ed25519 zhangir.azerbayev@cpu.hpc.stability.ai"
 alias eleuther="rename eleuther; ssh -i ~/.ssh/id_ed25519 zhangir.azerbayev@eleuther.hpc.stability.ai"
+alias byu="rename byu; ssh za2514@ssh.rc.byu.edu"
 
 # nvim 
 alias vim="nvim"
