@@ -137,7 +137,7 @@ let g:pear_tree_ft_disabled = ["tex"]
 call plug#end()
 " configures toggleterm
 lua require("toggleterm").setup()
-nnoremap <C-c> :ToggleTerm<CR>
+nnoremap <C-c> :ToggleTerm size=95 direction=vertical<CR>
 tnoremap <Esc> <C-\><C-n>
 
 
