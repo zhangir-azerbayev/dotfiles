@@ -90,6 +90,11 @@ set autoindent          " copy indent from current line when starting a new line
 " Use system clipboard 
 set clipboard=unnamedplus
 
+" Vertically split on the right 
+set splitright 
+" Opens a vertically split left terminal.
+nnoremap <C-s> :vsplit \| term<CR>
+
 " For coc
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
@@ -118,7 +123,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -135,10 +139,6 @@ let g:UltiSnipsEditSplit = "tabdo"
 let g:pear_tree_repeatable_expand=0
 let g:pear_tree_ft_disabled = ["tex"]
 call plug#end()
-" configures toggleterm
-lua require("toggleterm").setup()
-nnoremap <C-c> :ToggleTerm size=95 direction=vertical<CR>
-tnoremap <Esc> <C-\><C-n>
 
 
 "theming 

@@ -90,6 +90,11 @@ set autoindent          " copy indent from current line when starting a new line
 " Use system clipboard 
 set clipboard=unnamedplus
 
+" Vertically split on the right 
+set splitright 
+" Opens a vertically split left terminal.
+nnoremap <C-s> :vsplit \| term<CR>
+
 " For coc
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
@@ -116,6 +121,7 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
+Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
 " Configures vimtex 
 let g:tex_flavor='latex'
