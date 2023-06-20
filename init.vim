@@ -123,6 +123,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
+Plug 'jpalardy/vim-slime'
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -145,7 +146,8 @@ call plug#end()
 "“ color schemes
 set termguicolors
 syntax enable
-"colorscheme nord, except base16 for rust
+" colorscheme nord, except base16 for rust. I like nord for scripting
+" languages and base16-gruvbox-dark-hard for systems languages.
 colorscheme nord
 autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
 
@@ -160,3 +162,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Make the vim-slime target the neovim terminal
+let g:slime_target = "neovim"
