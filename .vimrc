@@ -92,8 +92,6 @@ set clipboard=unnamedplus
 
 " Vertically split on the right 
 set splitright 
-" Opens a vertically split left terminal.
-nnoremap <C-s> :vsplit \| term<CR>
 
 " For coc
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
@@ -123,6 +121,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
+Plug 'jpalardy/vim-slime'
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -145,7 +144,8 @@ call plug#end()
 "“ color schemes
 set termguicolors
 syntax enable
-"colorscheme nord, except base16 for rust
+" colorscheme nord, except base16 for rust. I like nord for scripting
+" languages and base16-gruvbox-dark-hard for systems languages.
 colorscheme nord
 autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
 
@@ -160,3 +160,8 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Make the vim-slime target the neovim terminal
+let g:slime_target = "tmux"
+let g:slime_bracketed_paste = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}

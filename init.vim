@@ -92,8 +92,6 @@ set clipboard=unnamedplus
 
 " Vertically split on the right 
 set splitright 
-" Opens a vertically split left terminal.
-nnoremap <C-s> :vsplit \| term<CR>
 
 " For coc
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
@@ -164,4 +162,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Make the vim-slime target the neovim terminal
-let g:slime_target = "neovim"
+let g:slime_target = "tmux"
+let g:slime_bracketed_paste = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
