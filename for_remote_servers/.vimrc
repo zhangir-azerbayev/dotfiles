@@ -99,11 +99,6 @@ set splitright
 set updatetime=300
 
 
-" For coc
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved
-set signcolumn=yes
-
 " Configures vim-plug 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -116,8 +111,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
@@ -142,12 +135,10 @@ call plug#end()
 
 "theming 
 "“ color schemes
-set termguicolors
 syntax enable
 " colorscheme nord, except base16 for rust. I like nord for scripting
 " languages and base16-gruvbox-dark-hard for systems languages.
-colorscheme nord
-autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
+colorscheme base16-gruvbox-dark-hard
 
 " something for rust 
 filetype plugin indent on 
