@@ -4,7 +4,7 @@ Configuration files for the following programs
 - fish 
 - neovim 
     - Packages: `nord-vim`, `base16-vim`, `nerdtree`, `vimtex`, `ultisnips`, `coc.nvim`, `rust.vim`, `pear-tree`, `toggleterm.nvim`
-- $$\LaTeX{}$$ preamble and snippets.
+- $\LaTeX{}$ preamble and snippets.
 - tmux
 - vim (I use nvim locally, but copy this `.vimrc` to any cluster I ssh into).
 
