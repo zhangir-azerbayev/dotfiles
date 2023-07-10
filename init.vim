@@ -122,6 +122,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
 Plug 'jpalardy/vim-slime'
+Plug 'lmburns/kimbox'
+Plug 'fcpg/vim-farout'
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -146,8 +148,8 @@ set termguicolors
 syntax enable
 " colorscheme nord, except base16 for rust. I like nord for scripting
 " languages and base16-gruvbox-dark-hard for systems languages.
-colorscheme nord
-autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
+colorscheme base16-gruvbox-dark-pale
+" autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
 
 " something for rust 
 filetype plugin indent on 
