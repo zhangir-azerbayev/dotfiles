@@ -79,13 +79,25 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 
-"Some nice stuff for indenting
+"Default indenting settings
 set expandtab           " enter spaces when tab is pressed
 set textwidth=0       " break lines when line length increases
 set tabstop=4           " use 4 spaces to represent tab
 set softtabstop=4
 set shiftwidth=4        " number of spaces to use for auto indent
 set autoindent          " copy indent from current line when starting a new line
+
+" C and C++ Language Settings
+autocmd FileType c,cpp setlocal cindent shiftwidth=4 tabstop=4
+
+" Python Settings
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+" Rust Settings
+autocmd FileType rust setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+" Lisp and Scheme Settings
+autocmd FileType lisp,scheme setlocal lisp
 
 " Use system clipboard 
 set clipboard=unnamedplus
