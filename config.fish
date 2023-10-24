@@ -10,8 +10,11 @@ alias ziva="rename ziva; ssh -o ServerAliveInterval=30 -J zaa7@tangra.cs.yale.ed
 alias morana="rename morana; ssh -o ServerAliveInterval=30 -J zaa7@tangra.cs.yale.edu zaa7@morana.cs.yale.edu"
 alias tangra="rename tangra; ssh -o ServerAliveInterval=30 zaa7@tangra.cs.yale.edu"
 alias vesna="rename vesna; ssh -o ServerAliveInterval=30 -J zaa7@tangra.cs.yale.edu zaa7@vesna.cs.yale.internal"
-alias stability="rename stability; ssh -i ~/.ssh/id_ed25519 -o ServerAliveInterval=30 zhangir.azerbayev@grantwest.hpc.stability.ai"
+alias stability="rename stability; ssh -i ~/.ssh/id_ed25519 -o ServerAliveInterval=30 zhangir.azerbayev@welcomewest.hpc.stability.ai"
 alias byu="rename byu; ssh -o ServerAliveInterval=30 za2514@ssh.rc.byu.edu"
+alias mounttangra="rename tangra-files; sshfs -o ServerAliveInterval=30 zaa7@tangra.cs.yale.edu:/home/zaa7/ ~/tangra"
+alias mountstability="rename stability-files; sshfs -o ServerAliveInterval=30 zhangir.azerbayev@grantwest.hpc.stability.ai:/fsx/proj-mathlm/ ~/grantwest"
+alias mountbyu="rename byu-files; sshfs -o ServerAliveInterval=30 za2514@ssh.rc.byu.edu:/nobackup/scratch/usr/za2514/ ~/byu"
 
 # nvim 
 alias vim="nvim"
