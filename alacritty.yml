@@ -232,10 +232,10 @@ font:
 #   - (Windows) powershell
 shell:
   program: /usr/bin/fish
-  args: 
-    - -l 
-    - -c 
-    - "tmux attach || tmux"
+#  args: 
+#    - -l 
+#    - -c 
+#   - "tmux attach || tmux"
 #  args:
 #    - --login
 
