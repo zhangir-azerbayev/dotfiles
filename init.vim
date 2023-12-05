@@ -105,9 +105,7 @@ set clipboard=unnamedplus
 " Vertically split on the right 
 set splitright 
 
-" For coc
-" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-" delays and poor user experience
+" Faster updatetime
 set updatetime=300
 
 
@@ -128,8 +126,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
 Plug 'jpalardy/vim-slime'
-Plug 'lmburns/kimbox'
-Plug 'fcpg/vim-farout'
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
