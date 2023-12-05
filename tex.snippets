@@ -15,6 +15,28 @@ snippet article "article"
 \end{document}
 endsnippet
 
+snippet beamer "beamer"
+\documentclass[handout]{beamer}
+
+\title{$1}
+\author{$2}
+\institute{$3}
+\date{$4}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+$0
+\end{document}
+endsnippet
+
 snippet beg "begin end" 
 \begin{$1}
 	$2
@@ -89,7 +111,7 @@ snippet ex "example"
 \begin{example}
 	$1
 \end{example}
-$0
+$ 0
 endsnippet
 
 snippet pf "proof"
@@ -134,7 +156,7 @@ snippet part "part"
 \end{part}
 endsnippet
 
-# text formatting 
+# text formatting  
 
 snippet prc "textproc"
 \textproc{$1}$0
@@ -244,4 +266,8 @@ endsnippet
 
 snippet tilde "tilde" i
 \tilde{$1} $0
+endsnippet
+
+snippet dkl "kl divergence" i
+\dkl{$1}{$2} $0
 endsnippet
