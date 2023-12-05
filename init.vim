@@ -111,11 +111,6 @@ set splitright
 set updatetime=300
 
 
-" For coc
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved
-set signcolumn=yes
-
 " Configures vim-plug 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
