@@ -46,5 +46,5 @@ ln -s $repo_dir/tex.snippets $snippet_config_path
 set code_config_dir $HOME/.config/Code/User
 mkdir -p $code_config_dir
 set code_config_path $code_config_dir/keybindings.json
-rm $conde_config_path; or true
+rm $code_config_path; or true
 ln -s $repo_dir/keybindings.json $code_config_path
