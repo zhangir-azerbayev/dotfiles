@@ -41,3 +41,10 @@ mkdir -p $HOME/.vim/UltiSnips
 set snippet_config_path $HOME/.vim/UltiSnips/tex.snippets
 rm $snippet_config_path; or true 
 ln -s $repo_dir/tex.snippets $snippet_config_path
+
+# vs code keybindings 
+set code_config_dir $HOME/.config/Code/User
+mkdir -p $code_config_dir
+set code_config_path $code_config_dir/keybindings.json
+rm $conde_config_path; or true
+ln -s $repo_dir/keybindings.json $code_config_path
