@@ -141,6 +141,7 @@ let g:UltiSnipsEditSplit = "tabdo"
 " Configures pear-tree
 let g:pear_tree_repeatable_expand=0
 let g:pear_tree_ft_disabled = ["tex"]
+let g:python3_host_prog = '/home/zhangir/miniconda3/bin/python'
 call plug#end()
 
 

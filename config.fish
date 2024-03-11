@@ -1,9 +1,3 @@
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/zhangir/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
 # aliased ssh commands 
 # see `tmux` section for `rename` command
 alias ziva="rename ziva; ssh -o ServerAliveInterval=30 -J zaa7@tangra.cs.yale.edu zaa7@ziva.cs.yale.internal"
@@ -32,3 +26,20 @@ set -gx PATH $PATH $HOME/.dotnet/tools
 
 # api keys
 source ~/.config/fish/api_keys.fish
+
+# opam configuration
+source /home/zhangir/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/zhangir/miniconda3/bin/conda
+    eval /home/zhangir/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/zhangir/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/zhangir/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/zhangir/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+
