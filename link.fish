@@ -48,3 +48,25 @@ mkdir -p $code_config_dir
 set code_config_path $code_config_dir/keybindings.json
 rm $code_config_path; or true
 ln -s $repo_dir/keybindings.json $code_config_path
+
+# Xresources
+set xresources_path $HOME/.Xresources
+rm $xresources_path; or true
+ln -s $repo_dir/.Xresources $xresources_path
+
+# xinitrc
+set xinitrc_path $HOME/.xinitrc
+rm $xinitrc_path; or true
+ln -s $repo_dir/.xinitrc $xinitrc_path
+
+# xmobar 
+set xmobar_path $HOME/.xmobarrc
+rm $xmobar_path; or true
+ln -s $repo_dir/.xmobarrc $xmobar_path
+
+# xmonad.hs
+set xmonad_dir $HOME/.config/xmonad/
+mkdir -p $xmonad_dir
+set xmonad_path $xmonad_dir/xmonad.hs
+rm $xmonad_path; or true 
+ln -s $repo_dir/xmonad.hs $xmonad_path
