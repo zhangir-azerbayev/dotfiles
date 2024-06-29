@@ -117,9 +117,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
@@ -150,10 +148,10 @@ call plug#end()
 "“ color schemes
 set termguicolors
 syntax enable
-" colorscheme nord, except base16 for rust. I like nord for scripting
-" languages and base16-gruvbox-dark-hard for systems languages.
-colorscheme gruvbox
-" autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
+set background=dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_performance = 1
+colorscheme gruvbox-material
 
 " something for rust 
 filetype plugin indent on 
