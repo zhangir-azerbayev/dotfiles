@@ -119,6 +119,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
@@ -126,6 +127,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
 Plug 'jpalardy/vim-slime'
+Plug 'neovim/nvim-lspconfig'
 " Configures vimtex 
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -150,7 +152,7 @@ set termguicolors
 syntax enable
 " colorscheme nord, except base16 for rust. I like nord for scripting
 " languages and base16-gruvbox-dark-hard for systems languages.
-colorscheme base16-gruvbox-dark-pale
+colorscheme gruvbox
 " autocmd BufEnter *.rs colorscheme base16-gruvbox-dark-hard
 
 " something for rust 
@@ -169,3 +171,53 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 let g:slime_target = "tmux"
 let g:slime_bracketed_paste = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+
+" Do lua stuff for nvim-lspconfig
+let $PYRIGHT_PYTHON = system("conda info --json | jq -r '.active_prefix'") . "/bin/python"
+lua << EOF
+require('lspconfig').pyright.setup{
+  on_attach = function(client, bufnr)
+    client.config.settings = {
+      python = {
+        analysis = {
+          typeCheckingMode = "off",
+          diagnosticMode = "workspace",
+          useLibraryCodeForTypes = true,
+          disable = { "unresolved-import", "unknown-attribute" }
+        }
+      }
+    }
+    if client.resolved_capabilities.workspace_configuration then
+      client.notify("workspace/didChangeConfiguration", {settings = client.config.settings})
+    end
+    vim.lsp.buf_attach_client(bufnr, client.id)
+  end
+}
+
+require('lspconfig').clangd.setup{
+  on_attach = function(client, bufnr)
+    -- additional setup can be done here
+    vim.lsp.buf_attach_client(bufnr, client.id)
+  end,
+  cmd = { "clangd", "--background-index", "--clang-tidy" },
+  filetypes = { "c", "cpp", "objc", "objcpp" },
+  root_dir = function(fname)
+    return require('lspconfig.util').root_pattern("compile_commands.json", "compile_flags.txt", ".git")(fname) or vim.fn.getcwd()
+  end,
+}
+
+vim.diagnostic.config({
+  virtual_text = true,  -- disable virtual text
+  signs = false,          -- keep signs on the line number column
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    source = "always",  -- show source in diagnostic float window
+  },
+})
+EOF
+nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr :lua vim.lsp.buf.references()<CR>
+nnoremap <silent> K :lua vim.lsp.buf.hover()<CR>
