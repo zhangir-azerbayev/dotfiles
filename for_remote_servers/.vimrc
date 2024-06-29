@@ -107,10 +107,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'preservim/nerdtree'
-Plug 'lervag/vimtex'
 Plug 'rust-lang/rust.vim'
 Plug 'khaveesh/vim-fish-syntax'
 Plug 'tmsvg/pear-tree'
@@ -136,9 +134,7 @@ call plug#end()
 "theming 
 "“ color schemes
 syntax enable
-" colorscheme nord, except base16 for rust. I like nord for scripting
-" languages and base16-gruvbox-dark-hard for systems languages.
-colorscheme base16-gruvbox-dark-hard
+colorscheme base16-gruvbox-dark-pale
 
 " something for rust 
 filetype plugin indent on 
@@ -151,8 +147,3 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-" Make the vim-slime target the neovim terminal
-let g:slime_target = "tmux"
-let g:slime_bracketed_paste = 1
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
