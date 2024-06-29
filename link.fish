@@ -4,47 +4,49 @@ set repo_dir (realpath (dirname (status -f)))
 echo "WARNING: this will delete your existing config files. Press enter to continue"
 read
 
+function setup_config
+    set -l dir $argv[1]
+    set -l file $argv[2]
+
+    mkdir -p $dir
+    set config_path $dir/$file
+    rm $config_path; or true
+    ln -s $repo_dir/$file $config_path
+end
+
 # alacritty
-mkdir -p $HOME/.config/alacritty
-set alacritty_config_path $HOME/.config/alacritty/alacritty.yml
-rm $alacritty_config_path; or true
-ln -s $repo_dir/alacritty.yml $alacritty_config_path
+setup_config $HOME/.config/alacritty alacritty.yml
 
 # fish
-mkdir -p $HOME/.config/fish
-set fish_config_path $HOME/.config/fish/config.fish
-rm $fish_config_path; or true
-ln -s $repo_dir/config.fish $fish_config_path
+setup_config $HOME/.config/fish config.fish
 
 if not test -e $HOME/.config/fish/api_keys.fish
     touch $HOME/.config/fish/api_keys.fish
 end
 
 # nvim
-mkdir -p $HOME/.config/nvim
-set nvim_config_path $HOME/.config/nvim/init.vim
-rm $nvim_config_path; or true
-ln -s $repo_dir/init.vim $nvim_config_path
+setup_config $HOME/.config/nvim init.vim
 
 # tmux
-set tmux_config_path $HOME/.tmux.conf
-rm $tmux_config_path; or true
-ln -s $repo_dir/.tmux.conf $tmux_config_path
+setup_config $HOME .tmux.conf
 
 # vim
-set vim_config_path $HOME/.vimrc
-rm $vim_config_path; or true
-ln -s $repo_dir/.vimrc $vim_config_path
+setup_config $HOME .vimrc
 
 # tex snippets
-mkdir -p $HOME/.vim/UltiSnips
-set snippet_config_path $HOME/.vim/UltiSnips/tex.snippets
-rm $snippet_config_path; or true 
-ln -s $repo_dir/tex.snippets $snippet_config_path
+setup_config $HOME/.vim/UltiSnips tex.snippets
 
-# vs code keybindings 
-set code_config_dir $HOME/.config/Code/User
-mkdir -p $code_config_dir
-set code_config_path $code_config_dir/keybindings.json
-rm $conde_config_path; or true
-ln -s $repo_dir/keybindings.json $code_config_path
+# vs code keybindings
+setup_config $HOME/.config/Code/User keybindings.json
+
+# Xresources
+setup_config $HOME .Xresources
+
+# xinitrc
+setup_config $HOME .xinitrc
+
+# xmobar
+setup_config $HOME .xmobarrc
+
+# xmonad.hs
+setup_config $HOME/.config/xmonad xmonad.hs
