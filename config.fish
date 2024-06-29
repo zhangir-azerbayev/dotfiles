@@ -11,3 +11,6 @@ alias ls="exa"
 
 # api keys
 source ~/.config/fish/api_keys.fish
+
+# pyenv
+pyenv init - | source
