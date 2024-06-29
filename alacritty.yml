@@ -112,18 +112,18 @@ window:
 # Font configuration
 font:
   normal:
-    family: Ubuntu Mono
-    style: Light
-  bold:
-    family: Ubuntu Mono
+    family: DejaVu Sans Mono
     style: Book
+  bold:
+    family: DejaVu Sans Mono
+    style: Bold
   italic:
-    family: Ubuntu Mono
-    style: Light Italic
+    family: DejaVu Sans Mono
+    style: Italic
   bold_italic:
-    family: Ubuntu Mono
-    style: Book Italic
-  size: 20.0
+    family: DejaVu Sans Mono
+    style: Bold Oblique
+  size: 15.0
 
 # Bell
 #
