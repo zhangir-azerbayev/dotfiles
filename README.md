@@ -7,7 +7,8 @@ Configuration files for the following programs
 - neovim with lua config
 - $\LaTeX{}$ preamble and snippets.
 
-To put all the config files in the correct places, run `fish link.fish`.
+To symlink config files to correct locations, run `fish link.fish`.
 
 ## Todos
 - [ ] set up vim-tex with new nvim config
+- [ ] make list of `apt install` dependencies.
