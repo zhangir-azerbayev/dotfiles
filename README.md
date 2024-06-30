@@ -1,11 +1,14 @@
 # dotfiles
 Configuration files for the following programs
-- Alacritty
+- alacritty
 - fish 
-- neovim 
-    - Packages: `nord-vim`, `base16-vim`, `nerdtree`, `vimtex`, `ultisnips`, `coc.nvim`, `rust.vim`, `pear-tree`, `toggleterm.nvim`
-- $\LaTeX{}$ preamble and snippets.
 - tmux
-- vim (I use nvim locally, but copy this `.vimrc` to any cluster I ssh into).
+- xmonad
+- neovim with lua config
+- $\LaTeX{}$ preamble and snippets.
 
-To put all the config files in the correct places, run `fish link.fish`.
+To symlink config files to correct locations, run `fish link.fish`.
+
+## Todos
+- [ ] set up vim-tex with new nvim config
+- [ ] make list of `apt install` dependencies.

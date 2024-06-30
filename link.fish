@@ -4,6 +4,9 @@ set repo_dir (realpath (dirname (status -f)))
 echo "WARNING: this will delete your existing config files. Press enter to continue"
 read
 
+mkdir -p $HOME/.config
+ln -s $repo_dir/nvim $HOME/.config/nvim
+
 function setup_config
     set -l dir $argv[1]
     set -l file $argv[2]
@@ -24,14 +27,8 @@ if not test -e $HOME/.config/fish/api_keys.fish
     touch $HOME/.config/fish/api_keys.fish
 end
 
-# nvim
-setup_config $HOME/.config/nvim init.vim
-
 # tmux
 setup_config $HOME .tmux.conf
-
-# vim
-setup_config $HOME .vimrc
 
 # tex snippets
 setup_config $HOME/.vim/UltiSnips tex.snippets
