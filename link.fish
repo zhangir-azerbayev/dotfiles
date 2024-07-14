@@ -33,9 +33,6 @@ setup_config $HOME .tmux.conf
 # tex snippets
 setup_config $HOME/.vim/UltiSnips tex.snippets
 
-# vs code keybindings
-setup_config $HOME/.config/Code/User keybindings.json
-
 # Xresources
 setup_config $HOME .Xresources
 
