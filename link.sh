@@ -25,6 +25,9 @@ ln -s "$repo_dir/nvim" "$HOME/.config/nvim"
 # alacritty
 setup_config "$HOME/.config/alacritty" alacritty.toml
 
+# zsh
+setup_config "$HOME" .zshrc
+
 # tmux
 setup_config "$HOME" .tmux.conf
 
