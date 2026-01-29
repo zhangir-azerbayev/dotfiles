@@ -28,6 +28,9 @@ setup_config "$HOME/.config/alacritty" alacritty.toml
 # zsh
 setup_config "$HOME" .zshrc
 
+# git
+setup_config "$HOME" .gitconfig
+
 # tmux
 setup_config "$HOME" .tmux.conf
 
